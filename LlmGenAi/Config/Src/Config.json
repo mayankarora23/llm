@@ -1,0 +1,74 @@
+{
+    "gptConfig124M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 768,
+        "attentionHeads"        : 12,
+        "numLayers"             : 12,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : true
+    },
+    "gptConfig355M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 256,
+        "embeddingDimension"    : 1024,
+        "attentionHeads"        : 16,
+        "numLayers"             : 24,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : false
+    },
+    "gptConfig774M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 1280,
+        "attentionHeads"        : 20,
+        "numLayers"             : 36,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : false
+    },
+    "gptConfig1558M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 1600,
+        "attentionHeads"        : 25,
+        "numLayers"             : 48,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : true
+    },
+    "layerNormConfig": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 5,
+        "attentionHeads"        : 12,
+        "numLayers"             : 12,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : false
+    },
+    "MyModelConfig": {
+        "vocabularySize"        : 50260,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 768,
+        "attentionHeads"        : 8,
+        "numLayers"             : 12,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : true
+    },
+    "useGptConfig"              : "MyModelConfig",
+    "learningConfig": {
+        "learningRate"          : 2e-5,
+        "weightDecay"           : 0.05,
+        "beta1"                 : 0.9,
+        "beta2"                 : 0.98,
+        "eps"                   : 1e-9,
+        "warmupStepPercent"     : 0.01,
+        "repetitionPenalty"     : 1.2
+    },
+    "attentionConfig": {
+        "multiHeadAttentionDropoutRate" : 0.1,
+        "crossHeadAttentionDropoutRate" : 0.1
+    },
+    "transformerEncoderConfig": {
+        "postMultiHeadAttentionDropoutRate" : 0.3,
+        "postFeedForwardDropoutRate"        : 0.1
+    }
+}

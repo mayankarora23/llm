@@ -1,0 +1,113 @@
+{
+    "gptConfig124M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 768,
+        "attentionHeads"        : 12,
+        "numLayers"             : 12,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : true
+    },
+    "gptConfig355M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 1024,
+        "attentionHeads"        : 16,
+        "numLayers"             : 24,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : false
+    },
+    "gptConfig774M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 1280,
+        "attentionHeads"        : 20,
+        "numLayers"             : 36,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : false
+    },
+    "gptConfig1558M": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 1600,
+        "attentionHeads"        : 25,
+        "numLayers"             : 48,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : true
+    },
+    "layerNormConfig": {
+        "vocabularySize"        : 50257,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 5,
+        "attentionHeads"        : 12,
+        "numLayers"             : 12,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : false
+    },
+    "MyModelConfig": {
+        "vocabularySize"        : 32134,
+        "contextLength"         : 1024,
+        "embeddingDimension"    : 1008,
+        "attentionHeads"        : 24,
+        "numLayers"             : 16,
+        "dropoutRate"           : 0.1,
+        "useQueryKeyValueBias"  : true,
+        "usePreNormalisation"   : true,
+        "gradientAccumStepSize" : 1
+    },
+    "useGptConfig"              : "MyModelConfig",
+    "learningConfig": {
+        "learningRate"          : 5e-4,
+        "weightDecay"           : 0.01,
+        "beta1"                 : 0.9,
+        "beta2"                 : 0.999,
+        "eps"                   : 1e-8,
+        "warmupStepPercent"     : 0.1,
+        "labelSmoothing"        : 0.1,
+        "decoderDropoutScaling" : 1,
+        "crossAttRegRate"       : 0.0,
+        "encoderLayerDropRate"  : 0.0,
+        "decoderLayerDropRate"  : 0.0,
+        "denoisingMaskingRate"  : 0.3,
+        "batchSize"             : 2,
+        "gradientClipping"      : 1.0,
+        "enableCosineDecay"     : false,
+        "enableLrWarmup"        : true
+    },
+    "checkpointConfig": {
+        "useOptimiserStateFromCheckpoint": false,
+        "useLrWarmupStateFromCheckpoint": false,
+        "useCossineDecayStateFromCheckpoint": false,
+        "overRideOptimiserLrFromConfig": false
+    },
+    "dataSetConfig": {
+        "startOfFixedData"      : 1,
+        "endOfFixedData"        : 30000,
+        "totalDataList"         : 30000,
+        "useVariableDataSet"    : false
+    },
+    "attentionConfig": {
+        "multiHeadAttentionDropoutRate" : 0.1,
+        "crossHeadAttentionDropoutRate" : 0.1
+    },
+    "transformerEncoderConfig": {
+        "postMultiHeadAttentionDropoutRate" : 0.1,
+        "postFeedForwardDropoutRate"        : 0.1
+    },
+    "generatorConfig": {
+        "temperature": 0.7,
+        "topK": 40
+    },
+    "llmStartConfig": {
+        "device": "cuda",
+        "numEpochs": 30,
+        "isTraining": true,
+        "runLlm": false,
+        "isFineTuning": false,
+        "saveParamsFileName": "../Parameters/LocalMyModel_BookCorpus_6Layer8Head_Pretrained_Attempt1.pth",
+        "useLoadParams": false,
+        "loadParamsFileName": "../Parameters/LocalMyModel_BookCorpus_6Layer8Head_Pretrained.pth",
+        "dataSetPath": "../LearningDataSet/book_corpus_training_dataset_input_texts.json",
+        "useDdp": true
+    }
+}
